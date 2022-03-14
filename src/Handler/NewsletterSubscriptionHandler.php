@@ -168,9 +168,16 @@ class NewsletterSubscriptionHandler implements NewsletterSubscriptionInterface
     protected function addMailchimpData(string $email): void
     {
         $response = $this->mailChimp->get($this->getListMemberEndpoint($email));
+        
+        dd($response);
 
         if (false === $response) {
-            dd($this->mailChimp->getLastResponse()); /** @phpstan-ignore-line */
+            throw new BadRequestHttpException(
+                sprintf(
+                    'Mailchimp returned false instead of response array, last error : %s',
+                    $this->mailChimp->getLastError()
+                )
+            );
         }
 
         Assert::keyExists($response, 'status');
