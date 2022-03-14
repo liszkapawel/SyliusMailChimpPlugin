@@ -170,12 +170,6 @@ class NewsletterSubscriptionHandler implements NewsletterSubscriptionInterface
         $response = $this->mailChimp->get($this->getListMemberEndpoint($email));
 
         if (false === $response) {
-            throw new BadRequestHttpException(
-                sprintf(
-                    'Mailchimp returned false instead of response array, last error : %s',
-                    $this->mailChimp->getLastError()
-                )
-            );
             dd($this->mailChimp->getLastResponse()); /** @phpstan-ignore-line */
         }
 
