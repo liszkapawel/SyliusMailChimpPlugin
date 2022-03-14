@@ -173,7 +173,7 @@ class NewsletterSubscriptionHandler implements NewsletterSubscriptionInterface
             throw new BadRequestHttpException(
                 sprintf(
                     'Mailchimp returned false instead of response array, last error : %s',
-                    $this->mailChimp->getLastError()
+                    $this->mailChimp->getLastResponse()
                 )
             );
         }
