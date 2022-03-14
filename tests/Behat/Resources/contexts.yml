@@ -18,3 +18,4 @@ services:
             - "@sylius.behat.shared_storage"
             - "%mailchimp.api_key%"
             - "%mailchimp.list_id%"
+            - "%mailchimp.webhook_secret%"
