@@ -6,8 +6,8 @@ Feature: Subscribing to the newsletter
 
   Background:
     Given the store operates on a single channel in "United States"
-    And there is a customer "Francis Underwood" identified by an email "francis@underwood.com" and a password "whitehouse"
-    And I am logged in as "francis@underwood.com"
+    And there is a customer "Francis Underwood" identified by an email "francis2@underwood.com" and a password "whitehouse"
+    And I am logged in as "francis2@underwood.com"
 
   @ui
   Scenario: Subscribing to the newsletter
@@ -16,4 +16,4 @@ Feature: Subscribing to the newsletter
     And I save my changes
     Then I should be notified that it has been successfully edited
     And I should be subscribed to the newsletter
-    And the email "francis@underwood.com" should be exported to MailChimp's default list
+    And the email "francis2@underwood.com" should be exported to MailChimp's default list
